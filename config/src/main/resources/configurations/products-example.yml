@@ -1,0 +1,41 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: products
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+token:
+  signing:
+    key: ${YOUR_SECRET_KEY}
+    lifetime: 3600000
+
+cloudinary:
+  cloud_name: ${YOUR_CLOUD_NAME}
+  api_key: ${YOUR_CLOUD_KEY}
+  api_secret: ${YOUR_CLOUD_SECRET}
+
+kafka:
+  bootstrap-servers: localhost:9092
