@@ -13,8 +13,8 @@ Shoply — микросервисное REST API приложение для э�
 - **ZooKeeper & Kafka** — управление очередями и синхронизация сервисов.  <br>
 - **Zipkin** — распределённое трассирование запросов.<br>
 
-## Протестировать приложение можно с помощью Postman
-**Register a new user:**  
+## Примеры запросов в Postman
+**Регистрация пользователя:**  
 `POST http://localhost:8222/auth/register`
 
 ```json
@@ -24,30 +24,31 @@ Shoply — микросервисное REST API приложение для э�
     "password": "testpassword"
 }
 ```
-
-`http://localhost:8222/auth/login`
+**Авторизация пользователя:**  
+`POST http://localhost:8222/auth/login`
 ```json
 {
-    "username": "helloegor2",
-    "password": "egorik1234566"
+    "username": "testuser",
+    "password": "testpassword"
 }
 ```
-
-`http://localhost:8222/product/add`
+**Добавление нового товара:**  
+`POST http://localhost:8222/product/add`
 <img width="1280" height="232" alt="image" src="https://github.com/user-attachments/assets/6cd1a69b-73dd-4e49-90b5-3a4c54967ee5" />
 <img width="1280" height="213" alt="image" src="https://github.com/user-attachments/assets/066fb301-f231-4811-b0aa-90647350cb96" />
 
+**Покупка товара:**  
 `http://localhost:8222/order/buy/{productId}`
 ```json
 {
 }
 ```
 
-## Технологии
+## Стэк
 
 Java 17 | Spring Boot 3.x | Spring Cloud  | Docker | | PostgreSQL | Kafka | Cloudinary | Zipkin | Maven |  
 
-## Быстрый старт
+## Как установить репозиторий
 
 1. Клонируйте репозиторий:  
 git clone https://github.com/helloegor03/shoply-services.git
